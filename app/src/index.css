@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+/* Tailwind v4 theme — exposes color/font tokens as utilities (bg-mr-bg, text-mr-cyan, etc.) */
+@theme {
+  --color-mr-bg: #2F324F;
+  --color-mr-bg-deep: #1E2138;
+  --color-mr-panel: #383B5D;
+  --color-mr-panel-soft: #44486C;
+  --color-mr-border: #D9DDEE;
+  --color-mr-text: #F2F4FF;
+  --color-mr-text-muted: #AEB4D4;
+
+  --color-mr-alert: #E56F82;
+  --color-mr-gold: #F4C84A;
+  --color-mr-cyan: #58C7E8;
+  --color-mr-green: #98C95A;
+  --color-mr-orange: #F28A42;
+  --color-mr-purple: #B478C8;
+
+  --color-faction-sorelia: #62C7E6;
+  --color-faction-komek: #F1C94B;
+  --color-faction-ventus: #E89042;
+  --color-faction-magnomi: #B987C9;
+  --color-faction-henko: #8CCB6A;
+
+  --font-display: "Orbitron", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+    background-color: var(--color-mr-bg);
+    color: var(--color-mr-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    margin: 0;
+    background-image:
+      radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.08), transparent 50%),
+      radial-gradient(1px 1px at 70% 80%, rgba(255,255,255,0.07), transparent 50%),
+      radial-gradient(1px 1px at 40% 60%, rgba(255,255,255,0.06), transparent 50%),
+      linear-gradient(rgba(217, 221, 238, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(217, 221, 238, 0.025) 1px, transparent 1px);
+    background-size: auto, auto, auto, 32px 32px, 32px 32px;
+    background-attachment: fixed;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--color-mr-cyan);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .mr-panel {
+    background-color: color-mix(in oklab, var(--color-mr-panel) 92%, transparent);
+    border: 1px solid color-mix(in oklab, var(--color-mr-border) 28%, transparent);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.02), 0 8px 24px rgba(0,0,0,0.25);
+    backdrop-filter: blur(6px);
+  }
+
+  .mr-panel-soft {
+    background-color: color-mix(in oklab, var(--color-mr-panel-soft) 75%, transparent);
+    border: 1px solid color-mix(in oklab, var(--color-mr-border) 18%, transparent);
+    border-radius: 0.375rem;
+  }
+
+  .mr-label {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.7rem;
+    color: var(--color-mr-text-muted);
+  }
+
+  .mr-title {
+    font-family: var(--font-display);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .mr-button {
+    font-family: var(--font-display);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border: 1px solid color-mix(in oklab, var(--color-mr-cyan) 55%, transparent);
+    background: linear-gradient(180deg, color-mix(in oklab, var(--color-mr-panel) 80%, transparent), color-mix(in oklab, var(--color-mr-bg-deep) 85%, transparent));
+    color: var(--color-mr-text);
+    border-radius: 0.375rem;
+    transition: all 120ms ease;
+    box-shadow: 0 0 0 1px rgba(88,199,232,0.04), 0 0 18px -8px rgba(88,199,232,0.35);
+  }
+  .mr-button:hover:not(:disabled) {
+    border-color: var(--color-mr-cyan);
+    box-shadow: 0 0 0 1px rgba(88,199,232,0.12), 0 0 24px -4px rgba(88,199,232,0.55);
+    transform: translateY(-1px);
+  }
+  .mr-button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+
+  .mr-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--color-mr-border) 55%, transparent), transparent);
+  }
+}
+
+/* Fonts via Google CDN */
+@font-face {
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/orbitron/v34/yMJMMIlzdpvBhQQL_SC3X9yhF25-T1nyGy6BoWg1.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/inter/v19/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Share Tech Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/sharetechmono/v15/J7aHnp1uDWRBEqV98dVQztYldFc7pAsEIc3X.woff2") format("woff2");
+}
