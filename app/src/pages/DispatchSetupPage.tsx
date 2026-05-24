@@ -1,6 +1,6 @@
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ArrowLeft, Search, ArrowRight, RotateCcw } from "lucide-react";
+import { ArrowLeft, Search, ArrowRight, RotateCcw, Check } from "lucide-react";
 import Fuse from "fuse.js";
 
 import { FACTIONS, type FactionId } from "@/data/factions";
@@ -28,10 +28,18 @@ export function DispatchSetupPage() {
   const [query, setQuery] = useState("");
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [zoom, setZoom] = useState<Card | null>(null);
+  const previewRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (leader) window.localStorage.setItem(LEADER_KEY, leader);
   }, [leader]);
+
+  function scrollToPreview() {
+    // Wait a frame so the just-rendered preview is in the DOM if this is the first selection.
+    requestAnimationFrame(() => {
+      previewRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
 
   const fuse = useMemo(
     () =>
@@ -168,6 +176,7 @@ export function DispatchSetupPage() {
                 active={selectedId === c.id}
                 onPick={() => setSelectedId(c.id)}
                 onZoom={() => setZoom(c)}
+                onConfirm={scrollToPreview}
               />
             ))}
           </div>
@@ -176,7 +185,7 @@ export function DispatchSetupPage() {
 
       {/* Selected Contract preview */}
       {selected && (
-        <section className="mb-8">
+        <section ref={previewRef} className="mb-8 scroll-mt-20">
           <h2 className="mr-title text-lg sm:text-xl mb-3">Selected Contract</h2>
           <div className="mr-panel p-4 sm:p-5 flex flex-col sm:flex-row gap-5">
             <div className="w-full sm:w-56 shrink-0" style={{ aspectRatio: CARD_ASPECT[selected.category] }}>
@@ -225,22 +234,43 @@ export function DispatchSetupPage() {
 }
 
 function ContractPickTile({
-  card, active, onPick, onZoom,
+  card, active, onPick, onZoom, onConfirm,
 }: {
   card: ContractCard;
   active: boolean;
   onPick: () => void;
   onZoom: () => void;
+  onConfirm: () => void;
 }) {
+  // If user taps the card again while it's already active, treat that as confirm + scroll.
+  function handleTileTap() {
+    if (active) onConfirm();
+    else onPick();
+  }
+
   return (
     <div className="relative group">
-      <CardTile card={card} onOpen={onPick} />
+      <CardTile card={card} onOpen={handleTileTap} />
       {active && (
-        <div
-          aria-hidden
-          className="absolute inset-0 rounded-md pointer-events-none ring-2 ring-mr-cyan"
-          style={{ boxShadow: "0 0 24px -4px var(--color-mr-cyan), inset 0 0 0 1px var(--color-mr-cyan)" }}
-        />
+        <>
+          <div
+            aria-hidden
+            className="absolute inset-0 rounded-md pointer-events-none ring-2 ring-mr-cyan"
+            style={{ boxShadow: "0 0 24px -4px var(--color-mr-cyan), inset 0 0 0 1px var(--color-mr-cyan)" }}
+          />
+          <button
+            type="button"
+            onClick={onConfirm}
+            className="absolute inset-x-1 bottom-1 px-2 py-1.5 rounded
+                       bg-mr-cyan text-mr-bg-deep font-mono uppercase tracking-widest text-[10px]
+                       flex items-center justify-center gap-1
+                       shadow-[0_0_18px_-2px_var(--color-mr-cyan)]"
+            aria-label={`Select ${card.name} and continue`}
+          >
+            <Check className="w-3 h-3" /> Select
+            <ArrowRight className="w-3 h-3" />
+          </button>
+        </>
       )}
       <button
         type="button"

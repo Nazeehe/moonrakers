@@ -41,25 +41,23 @@ export function HomePage() {
         />
       </div>
 
-      {/* Faction strip */}
-      <div className="mt-12">
-        <div className="mr-label mb-3">REGISTERED FACTIONS</div>
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 sm:gap-3">
-          {FACTIONS.map((f) => (
-            <div
-              key={f.id}
-              className="mr-panel-soft p-3 flex flex-col items-center text-center gap-1.5"
-              style={{ borderColor: `color-mix(in oklab, ${f.colorHex} 45%, transparent)` }}
-            >
-              <span
-                className="w-7 h-7 rounded-full border"
-                style={{ background: f.colorHex, borderColor: f.colorHex, boxShadow: `0 0 14px -2px ${f.colorHex}` }}
-              />
-              <span className="mr-title text-xs text-mr-text">{f.name}</span>
-              <span className="text-[10px] mr-label">{f.tagline}</span>
-            </div>
-          ))}
-        </div>
+      {/* Faction line — slim decorative strip; full list lives in footer */}
+      <div className="mt-8 flex items-center justify-center gap-2 sm:gap-3">
+        {FACTIONS.map((f, i) => (
+          <span key={f.id} className="flex items-center gap-2 sm:gap-3">
+            <span
+              className="w-2 h-2 rounded-full"
+              style={{ background: f.colorHex, boxShadow: `0 0 10px -1px ${f.colorHex}` }}
+              aria-hidden
+            />
+            <span className="mr-label text-[10px]" style={{ color: f.colorHex }}>
+              {f.name.toUpperCase()}
+            </span>
+            {i < FACTIONS.length - 1 && (
+              <span className="text-mr-text-muted/30 select-none" aria-hidden>·</span>
+            )}
+          </span>
+        ))}
       </div>
     </div>
   );
