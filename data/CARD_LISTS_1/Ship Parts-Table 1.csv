@@ -1,0 +1,125 @@
+Name,Brand,Card1,Card2,Card3,Card4,Card5,Cost,Game,Ability
+Absorption K2,Ventus,Reactor,,,,,3,BG,"At the start of a Contract, draw 1 Card if you have no Blue Reactors in your hand."
+Accelerator mk3,Komek,Reactor,,,,,4,BG,Your first Reactor played gives you an extra Action.
+Barrier A3,Ventus,Shield,,,,,2,BG,"At the start of a Contract, draw 1 Card if you have no Green Shields in your hand."
+Cloaking Device,Henko,,,,,,5,BG,Roll 1 fewer Hazard Die.
+"Clone Bay, The",Sorelia,,,,,,6,BG,"Once per Contract, you may play a single Crew Card twice. Each use requires an Action."
+Daburu mk1,Komek,,,,,,6,BG,Start every Contract with +1 Action.
+Dark Matter mk3,Magnomi,Damage 2,,,,,4,BG,"As 1 Action, discard a Damage 1 card and a Damage 2 card to deal 5 Damage."
+"Dauntless, The",Sorelia,Shield,Shield,,,,6,BG,Each Green Shield that you play also reduces the Damage requirement by 1 (to a minimum of 0).
+Defender 5000,Henko,Shield,,,,,3,BG,Spend 1 action to discard any 2 non-Shield cards to play them as a Green Shield.
+Duo 1000,Henko,Shield,,,,,4,BG,Your first Green Shield that you play counts as 2 Shields.
+Emulator mk2,Komek,Shield,,,,,3,BG,Play your first Green Shield without spending an Action.
+Escape Jets E1,Ventus,Thruster,,,,,3,BG,"At the start of a Contract, draw 1 Card if you have no Thrusters in your hand."
+Flash,Ventus,,,,,,6,BG,Your hand limit is now 6 instead of 5.
+"Gatling Laser, The",Sorelia,Miss,Damage 3,,,,5,BG,The Contract's requirement for Damage is 1 less (to a minimum of 0).
+Jump Jets E2,Ventus,Thruster,,,,,2,BG,"From now on, Allies draw 1 Card at the start of every Contract you participate in."
+"Leech, The",Sorelia,Reactor,Reactor,,,,5,BG,"As Mission Leader or Ally, gain 1 Action for each Ally participating in the current Contract (including you if you're not the Mission Leader).."
+MG Charge Core,Magnomi,Reactor,,,,,3,BG,Spend 1 Action to play a Damage 1 Card as a Damage 3 Card. Then add a Miss Card from the supply to your discard pile.
+MG Phase Core,Magnomi,Reactor,,,,,3,BG,"If you play 2 or more Blue Reactors, the Damage requirement for this Contract is reduced by 1 (to a minimum of 0)."
+MG Support Core,Magnomi,Reactor,Reactor,,,,3,BG,The first Damage card you play does not cost you an action.
+MG Warp,Magnomi,Thruster,,,,,5,BG,Draw 2 Cards when you play your first Damage card.
+MG1 Kinetic,Magnomi,Miss,Damage 1,Damage 1,,,3,BG,"Every time you trash a Damage 1 card from your hand, reduce the Contract's Damage requirement by 3 (to a minimum of 0)."
+MG1 Rail Gun,Magnomi,Miss,Damage 2,,,,3,BG,"Upon completing the current Contract, reduce its Damage requirement by 2 (to a minimum of 0) if you didn't play any Shield cards."
+MG2 Laser Turrets,Magnomi,Damage 1,Damage 1,,,,2,BG,Spend 1 Action to discard 2 Damage 1 cards deal 4 Damage.
+MG2 Quad Laser,Magnomi,Damage 3,,,,,4,BG,"At the start of a Contract, draw 2 Cards if you have no Damage cards in your hand."
+Multi Stage M1,Ventus,Thruster,Thruster,,,,4,BG,"Once per Contract, you may discard up to 3 Cards. Allies then draw an equal number of cards into their hands."
+Predator mk1,Komek,Miss,Damage 2,,,,3,BG,All players can play Damage 1 card without spending an Action.
+Projector S2,Ventus,Shield,Shield,,,,4,BG,"At the start of a Contract, draw 1 Card for every Hazard Die targeting you."
+Pulsor mk1,Komek,Reactor,,,,,2,BG,Allies (excluding you) start every Contract with an extra Action.
+"Pursuer, The",Sorelia,Thruster,Thruster,,,,6,BG,"Once per Contract, you may discard up to 3 Cards, and then draw an equal number of cards."
+"Quantum Driver, The",Sorelia,Miss,Damage 3,,,,7,BG,"Once per Contract, play a Damage 1 card as a Damage 3 card."
+Replicator mk1,Komek,Thruster,,,,,3,BG,"Discard 2 of the same exact card as 1 Action to play them as a Shield, Thruster, Reactor, or Damage 1."
+Sapphire mk2,Komek,Reactor,,,,,3,BG,The requirement for Reactors is always 1 less from now on for every Contract you're participating in.
+Swarm mk1,Komek,Miss,Damage 2,,,,4,BG,"Every time you discard a Damage 1 card from your hand, gain 2 Actions."
+Symbiote 9000,Henko,Shield,,,,,3,BG,"Once per Contract, you may block 1 Hazard icon by trashing a card from your hand."
+Titan 3000,Henko,Shield,,,,,3,BG,The Shield requirement for every Contract you participate in is reduced by 1 (to a minimum of 0).
+Twin Jets E4,Ventus,Thruster,,,,,3,BG,The Thruster requirement for every Contract you participate in is reduced by 1 (to a minimum of 0).
+Vector Jets E3,Ventus,Thruster,,,,,3,BG,"As Mission Leader, draw 1 Card at the start of every Contract."
+Aclimator 6050,Henko,Shield +,Shield x,,,,6,OL,"You may choose to change 1 of the Contract requirement types to Shields. You may do this even if a Shields requirement already exists, in which case, the requirement amounts stack. This applies to everyone participating in the Contract."
+"Arbiter, The",Sorelia,Miss,,,,,5,OL,Discard 2 cards to add 1 IOsphere to this card. Spend 3 IOsphere from this card to add a copy of any Action card in your hand (not Crew) to your discard pile from the supply.
+Augmentor 2050,Henko,Shield,,,,,4,OL,"Once per Contract, you may trash a Green Shield from your hand and add a Shield + to your discard pile."
+Catalyzer mk2,Komek,Reactor +,,,,,5,OL,"Once per Contract, if you play 2 Reactor cards in a row, draw 2 Cards."
+Contributor mk2,Komek,Thruster +,,,,,3,OL,"Once per Contract, you may give an ally a Blue Reactor or a Yellow Thruster from the supply and have them add it into their hand."
+Devotion 3050,Henko,Reactor +,Thruster +,Shield +,Damage +,,5,OL,You may only buy this Ship Part if you have 2 other Green Henko Ship Parts already installed on your ship.
+"Eternal, The",Sorelia,Damage +,Damage 1,Damage 1,Miss,Miss,5,OL,"Once per Contract, you may trash a card from your hand to add 1 IOsphere token to this card. Spend 4 IOsphere tokens from this card to gain 1 Prestige."
+Inverter mk2,Komek,Reactor,,,,,4,OL,"Once per Contract, you may trash a Blue Reactor from your hand to add a Reactor + to your discard pile."
+IO Buffer 2050,Henko,Shield +,,,,,3,OL,Discard any 1 Green Shield to add 1 IOsphere token to this card. Spend 1 IOsphere token from this card to reduce the Contract's Shield requirement by 1 (to a minimum of 0).
+IO Cache 3050,Henko,Shield x,,,,,4,OL,Discard 2 cards to add 1 IOsphere token to this card. Spend 2 IOsphere tokens from this card to ignore 1 Hazard icon.
+IO Exhaust E1,Ventus,Thruster +,,,,,4,OL,"Add 1 IOsphere token to this card to draw 1 Card. When this card has 4 IOsphere tokens on it, discard this Ship Part to the bottom of the deck."
+IO Gen mk1,Komek,Reactor x,Miss,,,,3,OL,"Add 1 IOsphere token to this card for every Contract you complete successfully. Spend 3 IOsphere tokens to play any card twice, spending only 1 Action to do so."
+IO Hotshot 1050,Henko,Shield +,,,,,5,OL,"Twice per Contract, you may roll a Hazard Die and add 1 IOsphere token to this card. Spend 1 IOsphere token to lower any requirement of the current Contract by 1 (to a minimum of 0)."
+IO Hub mk2,Komek,Reactor +,Miss,,,,4,OL,Discard any 1 Blue Reactor to add 1 IOsphere token to this card. Spend 3 IOsphere tokens from this card to a add a Blue Reactor + to your discard pile.
+IO Pivot H2,Ventus,Thruster +,,,,,3,OL,"After successfully completing a Contract, add 1 IOsphere token to this card for every Hazard icon you did not block. Spend 1 IOsphere token from this card to re-roll a Hazard die targeting you (once only)."
+IO Spark mk1,Komek,Reactor x,Miss,,,,3,OL,Discard any 1 Blue Reactor to add 1 IOsphere token to this card. Spend 1 IOsphere token from this card to gain 1 Action.
+IO Surge E2,Ventus,Thruster x,Miss,,,,3,OL,Discard any 1 Yellow Thruster from your hand to add 1 IOsphere token to this card. Spend 1 IOsphere token from this card to draw 1 Card.
+Magnetite M1,Ventus,Thruster x,,,,,4,OL,"Once per Contract, each Ally (excluding you) may choose to give you 1 card from their hand. You may trash it or add it to your hand."
+MG IO Charge,Magnomi,Damage +,,,,,4,OL,Add 1 IOsphere token to this card every time you block a Hazard icon. Spend 2 IOsphere tokens from this card deal 1 Damage.
+MG IO Core,Magnomi,Damage +,Damage 1,,,,4,OL,Discard 2 Damage cards to add 1 IOsphere token to this card. Spend 1 IOsphere token from this card to deal 1 Damage.
+MG IO Overkill,Magnomi,Damage 2,Damage 2,,,,5,OL,Add 1 IOsphere to this card every time you play a Damage 2 card. Spend 4 IOsphere tokens from this card to double your total played Damage.
+MG Overcharger,Magnomi,Damage +,,,,,5,OL,"Once per Contract, spend 1 extra Action when playing a Damage card to double its Damage value."
+MG Raid,Magnomi,Thruster +,Miss,Miss,,,4,OL,"At the start of a Contract you're participating in, if there is a Miss card in your hand, draw 2 Cards."
+MG Reformer,Magnomi,Damage +,Miss,,,,3,OL,"Once per Contract, you must either trash a card from your hand or add 1 Miss card to your discard pile from the supply."
+MG Tractor Beam,Magnomi,Damage +,,,,,3,OL,"When any other player trashes a card, you may add that card to your discard pile."
+MG Upgrade Core,Magnomi,Damage +,,,,,4,OL,"Once per Contract, you may trash a Damage card from your hand and add a Damage + card to your discard pile."
+"Mill, The",Sorelia,Reactor x,,,,,3,OL,"Once per Contract, discard the top card of your draw pile (without first seeing what it is). If it isn't a Crew Card, add a copy of that card to your discard pile from the supply."
+Modulator T3,Ventus,Thruster x,,,,,3,OL,"Once per Contract, you and an Ally may trade 1 card from your hands."
+Phase Drive mk3,Komek,Reactor +,Damage 1,,,,3,OL,"Once per Contract, you may take a card from your hand and give it to an Ally. They must add that card to their hand."
+Precari 4050,Henko,Shield +,Shield x,,,,6,OL,"At the start of a Contract, If there are 2 or more Hazard Dice targeting you, gain 1 Credit."
+"Reclaimer, The",Sorelia,Reactor x,Miss,,,,4,OL,"Any time you're able to trash a card, gain 2 Credits."
+Staged Burst E3,Ventus,Thruster,,,,,4,OL,"Once per Contract, you may trash a Yellow Thruster from your hand and add a Thruster + card to your discard pile"
+Tesselator mk1,Komek,Reactor x,Miss,,,,4,OL,"When discarding your cards at the end of a Contract (even if you failed it), you may add 1 of the discarded cards to the top of your draw pile."
+Thrust Tuner E2,Ventus,Thruster x,,,,,4,OL,"When playing any Yellow Thruster, you may discard the first card drawn as a result of the Thruster and draw an additional card."
+"Tributor, The",Sorelia,Reactor +,Miss,Miss,Miss,Miss,5,OL,"Once per Contract, you may trash 2 cards from your hand to reduce any one requirement of the current Contract by 3 (to a minimum of 0)."
+Twin Probe E2,Ventus,Thruster x,,,,,4,OL,"Once per Contract, look at the top card of your draw pile. You may then either return this card to the top of your draw pile or discard it."
+Underwriter 1050,Henko,Shield +,,,,,3,OL,"Any time you fail a Contract for any reason, gain 3 Credits."
+Artifact 205-A,Sorelia,,,,,,4,BT,Prestige costs 1 less Faction Reputation.
+Artifact 205-B,Sorelia,,,,,,4,BT,All Faction Reputation rewards except Prestige cost 1 fewer Reputation (to a minimum of 1).
+Comms Array C5,Ventus,Thruster,,,,,3,BT,"From now on, you trade any combination of 2 Faction Reputation to gain 1 Faction Reputation of another color (instead of the regular 3)."
+Envoy Shuttle,Ventus,Miss,,,,,3,BT,"Once per Contract, you may trash a card to gain 1 Faction Reputation in your lowest faction (choose 1 if tied)."
+Flak Mine,Henko,Shield,,,,,2,BT,"You may roll 1 additional Hazard Die in order to gain Faction Reputation equal to the number of Hazard icons rolled on that die (in case of 2 icons, you may add increase 1 Faction by 2 or 2 different Factions by 1 each)."
+LR Targeting Core,Magnomi,Damage 2,,,,,4,BT,You may spend any amount of Faction Reputation in any combination of colors to reduce the Contract's Damage requirement by that same amount.
+Proto Warning System,Henko,Shield,,,,,3,BT,"Once per Contract, you may spend 1 Faction Reputation to ignore 1 Hazard icon."
+Pulse Exchange,Komek,Reactor,,,,,2,BT,"Once per Contract, you may spend 1 Faction Reputation to gain 1 Action."
+Pulse Recycler,Komek,Reactor,,,,,2,BT,"Once per Contract, you may trash a Blue Reactor from your hand to gain 1 Faction Reputation."
+Radar Repeater,Magnomi,Damage 2,,,,,4,BT,"Once per Contract you're participating in, you may spend 1 Faction Reputation to reduce any requirement of the current Contract by 1."
+"Automaton, The",Sorelia,Any Action Card,,,,,,NOM,You may discard a Crew Card to reduce the Contract's Crew requirement by 2 (to a minimum of 0).
+"Conductor, The",Sorelia,Any Action Card,,,,,,NOM,"Once per turn, you may trash a card to gain 2 Actions."
+"Decoder, The",Sorelia,Any Action Card,,,,,,NOM,"As Mission Leader, draw 5 Contracts instead of 3 when you travel to a sector."
+"Icarus, The",Sorelia,Any Action Card,,,,,,NOM,Roll an additional Hazard Die when participating in every Contract from now on. All Thruster cards you draw let you draw an additional card.
+"Initiator, The",Sorelia,Any Action Card,,,,,,NOM,"Once per Contract, discard 3 unique cards to reduce any 1 Contract's requirement by 2 (to a minimum of 0)."
+"Intrepid, The",Sorelia,Any Action Card,,,,,,NOM,"When drawing an Event, draw 3 Event Cards and choose 1 to play. Return the other 2 to the bottom of the Event Deck."
+"Providence, The",Sorelia,Any Action Card,,,,,,NOM,"At the start of a Contract, draw and play the top card of your draw pile without spending an Action."
+"Resolute, The",Sorelia,Any Action Card,,,,,,NOM,"If you are alone in a sector, reduce any 1 requirement of the current Contract by 2 (to a minimum of 0)."
+"Seer, The",Sorelia,Any Action Card,,,,,,NOM,"Without changing the order, you may look at the top 2 cards in your draw pile at any time."
+"Spectre, The",Sorelia,Any Action Card,,,,,,NOM,"As Mission Leader or Ally, you may travel freely to any sector including your current sector."
+Doom,Magnomi,Damage 3,,,,,4,FE,"When you stay at base, gain 4 Credits instead of 1 Credit."
+Fission,Komek,Reactor,,,,,5,FE,Blue Reactor cards don't require an Action to play.
+Ghost,Ventus,Thruster,,,,,6,FE,Your first Thruster played lets you discard a Hazard Die.
+Siphon,Henko,Shield,,,,,5,FE,Gain an Action for each Hazard Die you block with a Shield.
+SOS,Sorelia,Miss,,,,,6,FE,"You may play Miss cards as a Shield, Thruster, Reactor, or Damage 1."
+EM-TR4,Sorelia,,,,,,2,SHR,"Once per Contract, you may pay 2 Credits to draw a basic loadout Action Card from the supply to your hand."
+Flare Shard,Henko,Shield,,,,,4,SHR,Gain 1 Credit for each of the Hazard icons you've blocked upon the completion of your turn.
+Hypershift,Ventus,Thruster,,,,,4,SHR,"Before playing cards, you may discard your entire hand. If you do, draw 5 Cards (or 6, if you own the Ship Part, Flash)."
+Refractor,Komek,Reactor,,,,,3,SHR,You may trash a Blue Reactor from you hand to gain 4 Actions.
+Shard Spear,Magnomi,Damage 2,,,,,4,SHR,You may trash a Damage card and any other card from your hand to add Damage of 1 tier higher than the Damage card you trashed.
+"Oracle, The",Sorelia,,,,,,4,STF,"At the start of a Contract, guess a Card Type (Reactor, Thruster, Shield, Damage, or Crew). All Allies draw 1 Card, and you gain 1 Credit for each card drawn that matches the chosen type."
+Pandorum Box,Ventus,Thruster,,,,,3,STF,Draw 2 Cards every time you a Hazard Die and get a double icon result.
+Panic Drones,Henko,Shield,,,,,6,STF,Subtract 1 from the result of every Hazard Die you roll (to a minimum of 0).
+Spark Root,Komek,Reactor,,,,,3,STF,"Gain 1 Action every time an Ally rolls a Hazard Die (e.g., if they roll 2 Hazard Dice, you gain 2 Actions)."
+STF Proto Field,Sorelia,Miss,,,,,3,STF,"Once per Contract, you may re-roll 1 of your Hazard Dice that you rolled for any reason."
+Bulwark 5040,Henko,,,,,,4,DM,Trash 1 Green Shield to gain a Dark Matter card. Play a Dark Matter card to ignore 2 Hazard icons.
+Fragmentor mk3,Komek,,,,,,3,DM,Trash 1 Blue Reactor from your hand to gain a Dark Matter Card. Play a Dark Matter Card to reduce the Contract's Reactor requirement by 2 (to a minimum of 0).
+Injector T9,Ventus,,,,,,3,DM,Trash 1 Yellow Thruster from your hand to gain a Dark Matter Card. Play a Dark Matter Card to reduce the Contract's Thruster requirement by 2 (to a minimum of 0).
+"Lattice, The",Sorelia,,,,,,5,DM,"Trash a Miss card from your hand to gain a Dark Matter Card. For every Dark Matter Card you play, gain 2 Credits."
+LR-42 Auto,Magnomi,,,,,,4,DM,Trash 1 Orange Damage card from your hand to gain a Dark Matter Card. Spend 1 Action to play 2 Dark Matter Cards to deal 6 Damage.
+Photon Cannon,Magnomi,,,,,,4,DM,Trash 1 Orange Damage Card from your hand to gain a Dark Matter Card. Play a Dark Matter Card to deal 2 Damage.
+Pod Coils,Ventus,,,,,,4,DM,Trash 1 Yellow Thruster Card from your hand to gain a Dark Matter Card. Play a Dark Matter Card to draw 3 Cards.
+Prism Canister,Komek,,,,,,4,DM,Trash 1 Blue Reactor Card from your hand to gain a Dark Matter Card. Play a Dark Matter Card to gain 3 Actions.
+Security Buffer,Henko,,,,,,3,DM,Trash 1 Green Shield from your hand to gain a Dark Matter Card. Play a Dark Matter Card to the current Contract's Shield requirement by 2 (to a minimum of 0).
+"Transponder, The",Sorelia,,,,,,4,DM,Trash a Miss card to gain a Dark Matter Card. Spend 1 Action to play 2 Dark Matter Cards and gain an Objective Card.
+"Hexahedron, The",Sorelia,,,,,,5,INT,"Once per Contract, roll a Moonroller die. Reduce a matching Contract requirement by 2 (to a minimum of 0)."
+MG Impact Warheads,Magnomi,,,,,,3,INT,"At the start of a Contract, roll a Moonroller die. On a Damage result, add a Damage 2 card to your hand from the supply. On a Moonroller result, you must trash a card from your hand."
+Octingency 8050,Henko,,,,,,4,INT,Roll a Moonroller die for each Hazard Die targeting you. Discard a Hazard Die for each Moonroller or Shield result rolled.
+Tertiary Drive mk1,Komek,,,,,,4,INT,"Once per Contract, roll 2 Moonroller dice. Play 1 matching card without spending an Action. Play any card on a Moonroller or play a Crew Card on a Purple Hex icon."
+Trajectory Array K4,Ventus,,,,,,3,INT,"Once per Contract, roll 4 Moonroller dice. Allies gain 1 Action for each Blue Reactor result and draw 1 Card for each Yellow Thruster result."

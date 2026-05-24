@@ -1,0 +1,86 @@
+Name,Role,Type,Cost,Game,Ability
+Ada Massa,Reactor Expert,Tech,3,BG,+3 Actions. Reduce the mission requirement for Blue Reactors by 1 to a minimum of 0.
+AT-0K,Tactical AI,Paladin,3,BG,Discard 1 of your rolled Hazard Dice. Play this card as an amount of Damage equal to the number of Hazard icons on the discarded die.
+B3-AR,Communications AI,Pilot,2,BG,Take a Crew Card from your played or discarded cards back into your hand and gain 1 Action.
+Bill Bendo,Supply Sergeant,Paladin,2,BG,Ignore 1 Hazard icon. The requirements for Shields is reduced by 1 to a minimum of 0. Draw 1 Card or gain 1 Action.
+Crusse Parke,Hot Shot,Merc,3,BG,Play as 4 Damage. Trash the top card of your draw pile (without first seeing what it is).
+Dana Powalki,Bounty Hunter,Merc,4,BG,"Play as 1 Damage 3 Card, and gain 1 Action."
+Kal Damar,Scavenger,Pilot,2,BG,"Draw 2 Cards. Afterwards, if you wish, you may trash 1 Card from your hand."
+Kary Powalk,Fleet Admiral,Merc,3,BG,All players' Damage Cards are +1 Damage. Gain 1 Action.
+Lee van Cribb,Scout,Tech,2,BG,"Look at the next 3 Cards in your Draw Pile. Play 1 as a free action and discard the other 2 cards. Then, gain 1 Action."
+Lila al Bindar,2nd Lieutenant,Tech,2,BG,"Trash a card from your hand and add a basic Blue Reactor to your discard pile. Also, gain 1 Action. (Trashing a card is not optional.)"
+Meg Gallak,Mine Engineer,Agent,4,BG,Trash a card from your hand. Subtract 2 from any 1 requirement to a minimum of 0. Gain 1 Action. (Trashing a card is not optional.)
+Moro Mada,Saboteur,Agent,4,BG,Subtract 2 from any one requirement for the current Contract (to a minimum of 0).
+Myla Dystra,Fearless Pilot,Pilot,3,BG,Discard any number of Cards from your hand to draw an equal number of cards to replace them. Gain 1 Action.
+Nella van Daval,Engine Mechanic,Pilot,3,BG,Draw 3 Cards. Reduce the requirement of this Contract's Thruster requirement by 1 (to a minimum of 0).
+Redacted,Strike Leader,Paladin,3,BG,Play this card as a Green Shield. Re-roll any number of your Hazard Dice once.
+Ryan Rogal,Munitions Expert,Merc,3,BG,"Draw 2 Cards. If you draw a Damage card, play one as a Damage 5 without spending an action."
+Ryle al Wren,Sergeant,Paladin,3,BG,"Ignore 2 Hazard icons, OR reduce the current Contract's Shield requirement by 2 (to a minimum of 0)."
+Sella Pelleon,Ensign,Agent,4,BG,Subtract 1 from any 1 requirement (to a minimum of 0). Draw 1 Card and gain 1 Action.
+Tantin al Vale,Deck Officer,Merc,2,BG,Play this card as a Damage 2 or a Green Shield.
+Zek Zarag,Navigator,Pilot,2,BG,"Search you draw pile for any Card, and play that card without spending an Action. Afterwards, shuffle your draw pile."
+Anka Kramer,Resonate Co-Pilot,Pilot,3,OL,+4 Cards. Discard 3 cards from your hand before proceeding.
+Armitage,Overseer,Paladin,3,OL,"Play as a Green Shield and gain 1 Action, OR you may trash this card to subtract 3 Shields from a Contract's requirement."
+Dae Arum,Translator,Agent,4,OL,Subtract 3 from any 1 Contract requirement (to a minimum of 0). Lose 1 Prestige (to a minimum of 0).
+Domi,Promoter,Tech,3,OL,Add or remove 1 IOsphere token to any of your Ship Parts that use them. Gain 1 Action.
+FT-1000,Resonate Artisan,Agent,3,OL,Subtract 2 from any 1 mission requirement to a minimum of 0. Add 1 Miss Card from the supply to your hand.
+Grinar Flok,Procurer,Agent,3,OL,Play as a Damage 4. Immediately roll an additional Hazard Die.
+Ha Kun,Recruiter,Agent,4,OL,Gain 1 Action. Add a Crew Card to your discard pile for free that costs 2 Credits or less.
+IO L1-ON,Engine AI,Pilot,3,OL,"Add 3 IOsphere tokens to this card. Once per Contract, remove 1 token to draw 1 Card. Do not discard this Crew Card until the last token is removed. This Crew Card can only reduce a Contract's Crew requirement for the Contract in play when this Crew Card "
+IO Mirage,Envoy AI,Agent,2,OL,"Add 3 IOsphere tokens to this card. Once per Contract, remove 1 token to add 1 token to any of your other cards that use them. Do not discard this Crew Card until the last token is removed. This Crew Card can only reduce a Contract's Crew requirement for "
+IO MK8,Reactor AI,Tech,3,OL,"Add 3 IOsphere tokens to this card. Once per Contract, remove 1 token to gain 1 Action. Do not discard this Crew Card until the last token is removed. This Crew Card can only reduce a Contract's Crew requirement for the Contract in play when this Crew Car"
+IO Wraith 3000,Defense AI,Paladin,3,OL,"Add 3 IOsphere tokens to this card. Once per Contract, remove 1 token to ignore 1 Hazard icon. Do not discard this Crew Card until the last token is removed. This Crew Card can only reduce a Contract's Crew requirement for the Contract in play when this C"
+IO-MG21,Attack AI,Merc,3,OL,"Add 3 IOsphere tokens to this card. Once per Contract, remove 1 token to deal 2 Damage. Do not discard this Crew Card until the last token is removed. This Crew Card can only reduce a Contract's Crew requirement for the Contract in play when this Crew Car"
+Ivan Guyril,Peace Enforcer,Agent,2,OL,"Subtract 2 from any 1 Contract requirement. Then, add this card to any other player's discard pile (not your own)."
+Kin Tobor,Medical Zealot,Agent,3,OL,"Trash a card from your hand, and gain 1 Credit. This is not optional."
+Kurt Bilar,Reactor Tech,Tech,3,OL,"Gain 2 Actions. If you have played 2 or more Blue Reactor cards, draw 2 Cards."
+Letyba,Junker,Agent,4,OL,Trash a basic Action card from your hand and replace it with any other Advanced Action Card of the same type.
+Lyntoba Ga,Shield Tech,Paladin,2,OL,"Ignore 3 Hazard icons. Then, add this Crew Card to any other player's discard pile."
+Miska Rose,Liaison,Agent,3,OL,Subtract 1 Crew requirement from the current Contract. Gain 1 Action.
+Oleg Ali,Helmsman,Pilot,2,OL,Draw 3 Cards. All players not participating in this Contract immediately draw 1 card.
+Pat Nungar,Machinist,Tech,3,OL,"Choose 2 different options: Gain 1 Action, Draw 1 Card, Ignore 1 Hazard icon, Trash a card from your hand."
+Ark Tii,Diplomat,Agent,3,BT,Gain 1 Action and immediately advance your lowest Faction Reputation marker by 1 (choose if tied).
+Detra Lar,Field Analyst,Tech,3,BT,Gain 3 Actions. You may trash this card to gain 1 Faction Reputation of any color.
+Finneal Lee,Regional Director,Tech,3,BT,Gain 1 Action. You may spend any amount of Faction Reputation of any colors to gain an equal number of additional Actions.
+Gadra Ga,General,Merc,3,BT,Spend any 2 of your Faction Reputation of any color to deal 4 Damage.
+Kinta Lar,Field Surveyor,Pilot,3,BT,"Draw 3 Cards. Afterwards, you may trash this Crew Card to gain 1 Faction Reputation of any color."
+Kyas IV,Loan Shark,Merc,3,BT,Play as a Damage 2 card. You may trash the top card of your draw pile (without first seeing what it is) to gain 2 Faction Reputation for any 2 colors or the same color).
+Linus Farno,Council Member,Paladin,3,BT,Play this card as a Green Shield. You may spend 1 of your Faction Reputation to gain 1 Faction Reputation of any other color.
+Lynna Tragel,Infiltrator,Paladin,2,BT,Play this card as a Green Shield. Roll an additional Hazard die. Gain 1 Faction Reputation of any color.
+Taygar Tak,Council Enforcer,Agent,2,BT,Spend 1 Faction Reputation to subtract 1 from any requirement (to a minimum of 0).
+"Warden, The",Priest of Thieves,Pilot,3,BT,Draw 2 Cards and gain 1 Faction Reputation of any color. All other players gain 1 Faction Reputation for the Faction with the least amount of Reputation (choose one if tied).
+Col Dervok,Engine Mechanic,Pilot,4,FE,"Trash a card from your hand, immediately gain 3 Credits, and gain 1 Action."
+Karma Kesa,Reactor Expert,Tech,3,FE,"Gain 3 Actions, OR draw an Objective Card."
+Metaxis,Ensign,Agent,3,FE,Use the special ability of any one faceup Crew Card in the display.
+Strada Rysh,Sergeant,Paladin,4,FE,Gain 1 Prestige and roll an additional Hazard Die. Gain 1 Action.
+Zardon the Enforcer,Bounty Hunter,Merc,3,FE,Immediately play all Damage Cards in your hand without spending an Action. Gain 1 Action.
+Baz,Munitions Expert,Merc,3,SHR,"Play as 1 Damage. If you complete the Contract, block 2 Hazard icons."
+Jes Ofra,Diplomat,Agent,4,SHR,"Add a basic Blue Reactor, Yellow Thruster, Green Shield or Damage 1 Card to your hand from the supply."
+Lok Tekt,Priest,Paladin,3,SHR,Discard any number of Green Shields from your hand. Then draw 2 Cards for each Shield card you discarded.
+Rez Vondu,Reactor Expert,Tech,2,SHR,"Gain 2 Actions, OR pay 1 Credit to gain 4 Actions instead."
+Sol Forst,Navigator,Pilot,2,SHR,"Draw 2 Cards, OR pay 1 Credit to draw 4 Cards."
+Amper,Morimeno,Merc,3,STF,Roll a Hazard Die: 0:Play Crew Card as Damage 4; 1:Play Crew Card as Damage 2; 2:+1 Hazard Icon.
+Avari,Paradin,Agent,4,STF,Roll a Hazard Die: 0:Gain 1 Prestige; 1:Lose 1 Credit (to a minimum of 0); 2:Trash this card.
+Salatar,Sennoti,Tech,2,STF,Roll a Hazard Die: 0:Play this card as 2 basic Blue Reactors; 1:Play this card as a 1 basic Blue Reactor; 2:Lose an Action.
+Thegor,Ashbane,Paladin,4,STF,Roll a Hazard Die: 0:Ignore all of your Hazard icons; 1:Play this card as a Green Shield; 2:Gain 1 hazard icon.
+Yarcon,Kelvari,Pilot,3,STF,Roll a Hazard die: 0:Play this card as 2 Thrusters; 1:Play this card as 1 Thruster; 2:Discard 2 cards.
+Agamar,Demigod,Agent,3,END,Every 2 Damage you play for this Contract can instead reduce another Contract requirement by 1 to a minimum of 0.
+Aponi,Demigod,Tech,3,END,"Play as a Blue Reactor, draw 1 card for every 2 Blue Reactor cards already played including this one."
+Belan,Demigod,Tech,4,END,Gain 2 Actions or block 2 Hazard icons. Reduce a Contract requirement by 1 to a minimum of 0.
+Isabel,Demigod,Merc,4,END,"You may trash a card from your hand to draw 3 cards, OR you may trash the top card of your deck (without first seeing what it is) to discard 1 Hazard Die."
+Klar,Demigod,Agent,3,END,"Draw 2 Objectives. Keep 1, and give the other one to another player. If you have currently the least amount of Prestige (not tied), keep both Objective Cards. Also, gain 1 Action."
+Naka,Demigod,Pilot,4,END,"Play this card as a Yellow Thruster. Then, gain 1 Action for each Thruster card already played including this one."
+Namari,Demigod,Paladin,3,END,"Play this card as a Green Shield. Then, draw 1 Card for each Shield card already played including this one."
+Pentha,Demigod,Paladin,3,END,Roll a Hazard Die. Reduce any Contract requirement(s) by the number of Hazard icons shown. Ignore 1 other Hazard icon.
+Prophet,Demigod,Pilot,6,END,"Gain any action card (basic or advanced), OR trash this card to gain 1 Prestige."
+Saghari,Demigod,Merc,3,END,Play this card as a Damage 2. Gain 1 Action for each Damage card already in play including this one.
+Dr. Umbrage,Symbiont,Merc,4,DM,"Add a Dark Matter card to your discard pile, or trash a Dark Matter card to deal 6 Damage."
+HAZ3,Symbiont,Paladin,5,DM,"Add a Dark Matter card to your discard pile, OR trash 1 Dark Matter card to gain immediately gain 5 Credits."
+Imdar Shade,Symbiont,Paladin,4,DM,"Add a Dark Matter card to your discard pile, OR trash 1 Dark Matter card to discard and ignore all of your Hazard Dice."
+Vanta Sae,Symbiont,Agent,4,DM,"Add a Dark Matter card to your discard pile, OR trash 2 Dark Matter cards to gain 1 Prestige."
+Vila Noir,Symbiont,Tech,4,DM,"Add a Dark Matter card to your discard pile, OR trash a Dark Matter card to gain 3 Actions and to draw 3 Cards."
+AN-D3RS,Rift Bender,Pilot,3,INT,Roll 3 Moonrollers Dice. Draw +2 Cards for each Thruster or Moonrollers icon. Discard 2 cards for each Purple Hex icon.
+Fortunatus,Rift Bender,Agent,4,INT,All players may roll a Moonrollers Die. Reduce a matching Contract requirement by 1. Reduce any requirement by 1 on Moonrollers or Purple Hex icons.
+Omnitus,Rift Bender,Tech,4,INT,"Roll 3 Moonroller dice. Gain 2 Actions for each Reactor, draw 2 Cards for each Thruster, and gain 1 Action for each Moonroller icon."
+Oparia,Rift Bender,Merc,4,INT,Roll 5 Moonroller dice. Deal 2 Damage for each Damage and gain 1 Hazard icon for each Purple Hex. You may re-roll each die once.
+S4-LADCAT,Rift Bender,Paladin,4,INT,Roll 4 Moonroller dice. Block 1 Hazard icon for each Moonroller icon. Reduce the current Contract's Shield requirement by 1 (to a minimum of 0) for each Shield icon. You may re-roll each die once.
