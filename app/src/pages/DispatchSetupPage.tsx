@@ -53,9 +53,9 @@ export function DispatchSetupPage() {
 
   const results = useMemo(() => {
     const trimmed = query.trim();
-    if (!trimmed) return allContracts.slice(0, 18);
+    if (!trimmed) return [];
     return fuse.search(trimmed).slice(0, 24).map((r) => r.item);
-  }, [query, fuse, allContracts]);
+  }, [query, fuse]);
 
   const selected = useMemo(
     () => allContracts.find((c) => c.id === selectedId) ?? null,
@@ -163,11 +163,13 @@ export function DispatchSetupPage() {
           )}
         </div>
 
-        {results.length === 0 ? (
+        {query.trim() && results.length === 0 && (
           <div className="mr-panel p-8 text-center text-mr-text-muted text-sm">
             No contracts match that query.
           </div>
-        ) : (
+        )}
+
+        {results.length > 0 && (
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
             {results.map((c) => (
               <ContractPickTile
