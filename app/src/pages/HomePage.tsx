@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Database, Radio } from "lucide-react";
-import { FACTIONS } from "@/data/factions";
 
 export function HomePage() {
   return (
@@ -41,24 +40,6 @@ export function HomePage() {
         />
       </div>
 
-      {/* Faction line — slim decorative strip; full list lives in footer */}
-      <div className="mt-8 flex items-center justify-center gap-2 sm:gap-3">
-        {FACTIONS.map((f, i) => (
-          <span key={f.id} className="flex items-center gap-2 sm:gap-3">
-            <span
-              className="w-2 h-2 rounded-full"
-              style={{ background: f.colorHex, boxShadow: `0 0 10px -1px ${f.colorHex}` }}
-              aria-hidden
-            />
-            <span className="mr-label text-[10px]" style={{ color: f.colorHex }}>
-              {f.name.toUpperCase()}
-            </span>
-            {i < FACTIONS.length - 1 && (
-              <span className="text-mr-text-muted/30 select-none" aria-hidden>·</span>
-            )}
-          </span>
-        ))}
-      </div>
     </div>
   );
 }
