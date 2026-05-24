@@ -27,24 +27,25 @@ npm run dev -- --host 0.0.0.0
 
 ```
 .
-├── data/CARD_LISTS_1/     # source CSVs (one per card category)
-├── images/                # card art, organized by category/expansion
-└── app/                   # the React app
-    ├── public/card-images → symlink to ../../images (Vite serves these)
-    ├── scripts/build-cards.mjs  # CSV → src/data/cards.json
+└── app/                              # everything lives here
+    ├── data/source-csvs/             # source CSVs (one per card category)
+    ├── public/
+    │   ├── card-images/              # card art by category/expansion
+    │   └── _redirects                # SPA fallback for Cloudflare Pages
+    ├── scripts/build-cards.mjs       # CSV → src/data/cards.json
     └── src/
-        ├── pages/         # HomePage, ArmoryCategoryPage, CardBrowserPage,
-        │                  # DispatchSetupPage, NegotiationPage
-        ├── components/    # Layout, Armory, Negotiation, Icons
-        ├── state/         # negotiationReducer, derived state, persistence hook
-        ├── data/          # generated cards.json, faction definitions
-        ├── lib/           # cards helpers
-        └── types/         # Card, Allocation, NegotiationSession, etc.
+        ├── pages/                    # Home, Armory, CardBrowser,
+        │                             # DispatchSetup, Negotiation
+        ├── components/               # Layout, Armory, Negotiation, Icons
+        ├── state/                    # reducer, derived, persistence hook
+        ├── data/                     # generated cards.json, factions
+        ├── lib/                      # card helpers
+        └── types/                    # Card, Allocation, Session, etc.
 ```
 
 ## Data pipeline
 
-`app/scripts/build-cards.mjs` parses the four CSVs in `data/CARD_LISTS_1/`,
+`app/scripts/build-cards.mjs` parses the four CSVs in `app/data/source-csvs/`,
 maps each card to its image file across the expansion subfolders, and emits
 `app/src/data/cards.json` (392 cards, ~96% with images).
 
@@ -55,7 +56,7 @@ npm run build:cards
 
 Re-run this whenever the CSVs or images change. The expansion codes
 (`BG`, `BT`, `DM`, `END`, `FE`, `INT`, `NOM`, `OL`, `SHR`, `STF`) map to
-the directory names under `images/<category>/`.
+the directory names under `public/card-images/<category>/`.
 
 ## What's built
 

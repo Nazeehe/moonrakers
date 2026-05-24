@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "find public -name '.DS_Store' -delete",
     "build": "tsc -b && vite build",
     "build:cards": "node scripts/build-cards.mjs",
     "lint": "eslint .",

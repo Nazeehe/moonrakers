@@ -6,10 +6,10 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ROOT = path.resolve(__dirname, "../..");
-const DATA_DIR = path.join(ROOT, "data/CARD_LISTS_1");
-const IMAGES_DIR = path.join(ROOT, "images");
-const OUT = path.resolve(__dirname, "../src/data/cards.json");
+const APP_ROOT = path.resolve(__dirname, "..");
+const DATA_DIR = path.join(APP_ROOT, "data/source-csvs");
+const IMAGES_DIR = path.join(APP_ROOT, "public/card-images");
+const OUT = path.join(APP_ROOT, "src/data/cards.json");
 
 // RFC4180-ish CSV parser: handles quoted fields, doubled quotes, embedded commas/newlines.
 function parseCSV(text) {
