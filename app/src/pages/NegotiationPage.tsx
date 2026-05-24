@@ -77,7 +77,10 @@ export function NegotiationPage() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-3 sm:px-6 py-4 sm:py-6">
+    <div
+      className="max-w-6xl mx-auto px-3 sm:px-6 py-4 sm:py-6 transition-[padding] duration-150"
+      style={{ paddingBottom: assignment.pending ? "8rem" : undefined }}
+    >
       {/* Top bar */}
       <div className="flex items-center justify-between mb-4">
         <Link to="/dispatch" className="mr-label hover:text-mr-cyan inline-flex items-center gap-1.5">
@@ -99,16 +102,6 @@ export function NegotiationPage() {
       {/* Tabs */}
       <div className="mr-panel-soft p-2 mb-3 sm:mb-4">
         <NegotiationTabs session={session} dispatch={dispatch} />
-      </div>
-
-      {/* Assignment banner — sticky, only shown when one is pending */}
-      <div className="mb-3 sm:mb-4">
-        <AssignmentBanner
-          pending={assignment.pending}
-          count={assignment.count}
-          onCount={assignment.setCount}
-          onCancel={assignment.cancel}
-        />
       </div>
 
       {/* Status banner */}
@@ -157,6 +150,14 @@ export function NegotiationPage() {
       />
 
       <CardZoomModal card={zoom} onClose={() => setZoom(null)} />
+
+      {/* Floating assignment pill — fixed at bottom, doesn't push layout */}
+      <AssignmentBanner
+        pending={assignment.pending}
+        count={assignment.count}
+        onCount={assignment.setCount}
+        onCancel={assignment.cancel}
+      />
     </div>
   );
 }

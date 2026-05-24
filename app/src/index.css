@@ -111,6 +111,11 @@
   }
 }
 
+@keyframes slideUp {
+  from { transform: translate(-50%, 24px); opacity: 0; }
+  to   { transform: translate(-50%, 0);    opacity: 1; }
+}
+
 /* Fonts via Google CDN */
 @font-face {
   font-family: "Orbitron";

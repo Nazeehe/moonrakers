@@ -42,15 +42,19 @@ export function AssignmentBanner({ pending, count, onCount, onCancel }: Props) {
 
   return (
     <div
-      className="sticky top-[57px] z-20 mr-panel px-3 sm:px-4 py-2.5 flex items-center justify-between gap-3 sm:gap-4 flex-wrap"
+      className="fixed left-1/2 -translate-x-1/2 z-30 mr-panel
+                 px-3 sm:px-4 py-2.5 flex items-center justify-between gap-3 sm:gap-4
+                 w-[calc(100vw-1rem)] max-w-2xl
+                 animate-[slideUp_180ms_ease-out]"
       style={{
+        bottom: "max(1rem, env(safe-area-inset-bottom))",
         borderColor: `color-mix(in oklab, ${tint} 60%, transparent)`,
-        boxShadow: `0 0 0 1px color-mix(in oklab, ${tint} 25%, transparent), 0 0 28px -8px ${tint}`,
+        boxShadow: `0 0 0 1px color-mix(in oklab, ${tint} 25%, transparent), 0 12px 40px -8px rgba(0,0,0,0.5), 0 0 28px -8px ${tint}`,
       }}
       role="region"
       aria-label="Pending assignment"
     >
-      <div className="flex items-center gap-3 min-w-0">
+      <div className="flex items-center gap-3 min-w-0 flex-1">
         <div
           className="w-9 h-9 rounded-md border grid place-items-center shrink-0"
           style={{ borderColor: tint, color: tint, background: `color-mix(in oklab, ${tint} 10%, transparent)` }}
@@ -59,14 +63,14 @@ export function AssignmentBanner({ pending, count, onCount, onCancel }: Props) {
         </div>
         <div className="min-w-0">
           <div className="mr-label" style={{ color: tint }}>// ASSIGN {KIND_LABEL[pending.kind].toUpperCase()}</div>
-          <div className="text-sm text-mr-text truncate">
+          <div className="text-xs sm:text-sm text-mr-text truncate">
             <span className="font-mono">{RESOURCE_LABEL[pending.resourceType]}</span>
-            <span className="text-mr-text-muted"> · {pending.remaining} available · tap a player box below</span>
+            <span className="text-mr-text-muted"> · {pending.remaining} left · tap a player</span>
           </div>
         </div>
       </div>
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 shrink-0">
         <CountStepper
           count={count}
           max={pending.remaining}
@@ -76,9 +80,10 @@ export function AssignmentBanner({ pending, count, onCount, onCancel }: Props) {
         <button
           type="button"
           onClick={onCancel}
-          className="ml-1 px-2.5 py-1.5 rounded border border-mr-border/25 text-mr-text-muted hover:text-mr-alert hover:border-mr-alert font-mono text-xs uppercase tracking-widest inline-flex items-center gap-1"
+          aria-label="Cancel assignment"
+          className="ml-1 w-9 h-9 rounded border border-mr-border/25 text-mr-text-muted hover:text-mr-alert hover:border-mr-alert grid place-items-center"
         >
-          <X className="w-3.5 h-3.5" /> Cancel
+          <X className="w-4 h-4" />
         </button>
       </div>
     </div>
