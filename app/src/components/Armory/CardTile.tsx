@@ -17,7 +17,7 @@ export function CardTile({ card, onOpen }: Props) {
       type="button"
       onClick={() => onOpen(card)}
       style={{ aspectRatio: CARD_ASPECT[card.category] }}
-      className="group relative rounded-md overflow-hidden mr-panel-soft text-left
+      className="group block w-full relative rounded-md overflow-hidden mr-panel-soft text-left
                  hover:scale-[1.02] hover:shadow-[0_0_24px_-6px_rgba(88,199,232,0.45)]
                  transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mr-cyan"
       aria-label={`Open ${card.name}`}
