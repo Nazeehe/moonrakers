@@ -38,6 +38,7 @@ export type NegotiationAction =
   | { type: "RENAME_TAB"; tabId: string; name: string }
   | { type: "ADD_ALLOCATION"; allocation: Omit<Allocation, "id"> & { id?: string } }
   | { type: "UPDATE_ALLOCATION"; allocationId: string; patch: Partial<Omit<Allocation, "id">> }
+  | { type: "SPLIT_ALLOCATION"; allocationId: string; moveCount: number; toPlayerId: FactionId }
   | { type: "REMOVE_ALLOCATION"; allocationId: string }
   | { type: "TOGGLE_ACCEPTED"; tabId: string; playerId: FactionId };
 

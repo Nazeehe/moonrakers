@@ -4,7 +4,7 @@ import type { Allocation, NegotiationAction } from "@/types/negotiation";
 import type { ContractCard } from "@/types/cards";
 import { RESOURCE_LABEL } from "@/types/cards";
 import { ResourceIcon } from "@/components/Icons/ResourceIcon";
-import { FACTIONS, type FactionId } from "@/data/factions";
+import { FACTIONS, FACTION_BY_ID, type FactionId } from "@/data/factions";
 import {
   getRemainingHazards,
   getRemainingRequirements,
@@ -61,18 +61,34 @@ export function EditAllocationModal({ allocation, contract, allAllocations, onCl
 
   if (!allocation) return null;
 
-  const clampedCount = Math.min(Math.max(1, draftCount), Math.max(1, max));
-  const playerChanged = draftPlayerId !== allocation.playerId;
-  const countChanged = clampedCount !== allocation.count;
+  const playerChanged = draftPlayerId !== allocation.playerId && draftPlayerId !== null;
+  // In "move" mode (player changed) the count is capped at the source chip's count
+  // so we can't move more than exists. In "edit" mode it's capped at remaining pool + current.
+  const effectiveMax = playerChanged ? allocation.count : max;
+  const clampedCount = Math.min(Math.max(1, draftCount), Math.max(1, effectiveMax));
+  const countChanged = !playerChanged && clampedCount !== allocation.count;
   const dirty = playerChanged || countChanged;
+
+  const originalFaction = FACTION_BY_ID[allocation.playerId];
+  const keepsAfterMove = allocation.count - clampedCount;
 
   function apply() {
     if (!allocation) return;
-    const patch: Partial<Allocation> = {};
-    if (playerChanged && draftPlayerId) patch.playerId = draftPlayerId;
-    if (countChanged) patch.count = clampedCount;
-    if (Object.keys(patch).length > 0) {
-      dispatch({ type: "UPDATE_ALLOCATION", allocationId: allocation.id, patch });
+    if (playerChanged && draftPlayerId) {
+      // Move/Split: dispatch SPLIT_ALLOCATION; the reducer merges if the
+      // destination player already has the same resource.
+      dispatch({
+        type: "SPLIT_ALLOCATION",
+        allocationId: allocation.id,
+        moveCount: clampedCount,
+        toPlayerId: draftPlayerId,
+      });
+    } else if (countChanged) {
+      dispatch({
+        type: "UPDATE_ALLOCATION",
+        allocationId: allocation.id,
+        patch: { count: clampedCount },
+      });
     }
     onClose();
   }
@@ -107,7 +123,8 @@ export function EditAllocationModal({ allocation, contract, allAllocations, onCl
 
         <div className="mb-4">
           <div className="mr-label mb-2">
-            Count <span className="text-mr-text-muted/70">· max {max}</span>
+            {playerChanged ? "Move how many" : "Count"}
+            <span className="text-mr-text-muted/70"> · max {effectiveMax}</span>
           </div>
           <div className="inline-flex items-center mr-panel-soft">
             <button
@@ -122,18 +139,28 @@ export function EditAllocationModal({ allocation, contract, allAllocations, onCl
             <span className="px-4 font-mono text-lg tabular-nums min-w-[3rem] text-center text-mr-cyan">{clampedCount}</span>
             <button
               type="button"
-              onClick={() => setDraftCount((c) => Math.min(max, c + 1))}
-              disabled={clampedCount >= max}
+              onClick={() => setDraftCount((c) => Math.min(effectiveMax, c + 1))}
+              disabled={clampedCount >= effectiveMax}
               aria-label="Increase"
               className="w-10 h-10 grid place-items-center text-mr-text hover:text-mr-cyan disabled:opacity-40"
             >
               <Plus className="w-4 h-4" />
             </button>
           </div>
+          {playerChanged && (
+            <div className="mt-2 text-xs text-mr-text-muted">
+              <span style={{ color: originalFaction.colorHex }}>{originalFaction.name}</span>
+              {" "}keeps{" "}
+              <span className="font-mono text-mr-text">{keepsAfterMove}</span>
+              {keepsAfterMove === 0 && " (chip removed)"}
+            </div>
+          )}
         </div>
 
         <div className="mb-5">
-          <div className="mr-label mb-2">Assigned to · tap to reassign</div>
+          <div className="mr-label mb-2">
+            {playerChanged ? "Move to" : "Assigned to · tap to reassign"}
+          </div>
           <div className="grid grid-cols-5 gap-1.5">
             {FACTIONS.map((f) => {
               const active = draftPlayerId === f.id;

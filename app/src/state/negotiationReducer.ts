@@ -133,6 +133,26 @@ export function negotiationReducer(
         };
       });
 
+    case "SPLIT_ALLOCATION":
+      return mapActiveTab(state, (t) => {
+        const src = t.allocations.find((a) => a.id === action.allocationId);
+        if (!src || action.moveCount <= 0 || action.moveCount > src.count) return t;
+        const remaining = src.count - action.moveCount;
+        let allocations =
+          remaining > 0
+            ? t.allocations.map((a) => (a.id === src.id ? { ...a, count: remaining } : a))
+            : t.allocations.filter((a) => a.id !== src.id);
+        const newAlloc: Allocation = {
+          id: uid("alloc"),
+          kind: src.kind,
+          resourceType: src.resourceType,
+          count: action.moveCount,
+          playerId: action.toPlayerId,
+        };
+        allocations = mergeAllocation(allocations, newAlloc);
+        return { ...t, allocations };
+      });
+
     case "REMOVE_ALLOCATION":
       return mapActiveTab(state, (t) => ({
         ...t,
