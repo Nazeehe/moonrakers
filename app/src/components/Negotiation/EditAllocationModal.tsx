@@ -20,18 +20,24 @@ type Props = {
 };
 
 export function EditAllocationModal({ allocation, contract, allAllocations, onClose, dispatch }: Props) {
-  const [count, setCount] = useState(allocation?.count ?? 1);
+  // Draft state — held locally until Apply. Lets the user reassign without
+  // losing the count edit and gives instant visual feedback on the active player.
+  const [draftCount, setDraftCount] = useState(1);
+  const [draftPlayerId, setDraftPlayerId] = useState<FactionId | null>(null);
 
   useEffect(() => {
-    setCount(allocation?.count ?? 1);
-  }, [allocation?.id, allocation?.count]);
+    if (!allocation) return;
+    setDraftCount(allocation.count);
+    setDraftPlayerId(allocation.playerId);
+  }, [allocation?.id]);
 
-  // Headroom = whatever's still unallocated for this resource, plus this allocation's own current count.
+  // Max we could set this chip to:
+  // (whatever's still unallocated of this resource) + (this chip's current count)
   const max = useMemo(() => {
     if (!allocation) return 0;
     const others = allAllocations.filter((a) => a.id !== allocation.id);
     if (allocation.kind === "risk" && allocation.resourceType === "hazard") {
-      return getRemainingHazards(contract, others) + 0; // remaining already excludes this alloc
+      return getRemainingHazards(contract, others);
     }
     if (allocation.kind === "requirement") {
       const r = getRemainingRequirements(contract, others).find((x) => x.type === allocation.resourceType);
@@ -54,7 +60,22 @@ export function EditAllocationModal({ allocation, contract, allAllocations, onCl
   }, [allocation, onClose]);
 
   if (!allocation) return null;
-  const clamped = Math.min(Math.max(1, count), Math.max(1, max));
+
+  const clampedCount = Math.min(Math.max(1, draftCount), Math.max(1, max));
+  const playerChanged = draftPlayerId !== allocation.playerId;
+  const countChanged = clampedCount !== allocation.count;
+  const dirty = playerChanged || countChanged;
+
+  function apply() {
+    if (!allocation) return;
+    const patch: Partial<Allocation> = {};
+    if (playerChanged && draftPlayerId) patch.playerId = draftPlayerId;
+    if (countChanged) patch.count = clampedCount;
+    if (Object.keys(patch).length > 0) {
+      dispatch({ type: "UPDATE_ALLOCATION", allocationId: allocation.id, patch });
+    }
+    onClose();
+  }
 
   return (
     <div
@@ -85,22 +106,24 @@ export function EditAllocationModal({ allocation, contract, allAllocations, onCl
         </div>
 
         <div className="mb-4">
-          <div className="mr-label mb-2">Count <span className="text-mr-text-muted/70">· max {max}</span></div>
+          <div className="mr-label mb-2">
+            Count <span className="text-mr-text-muted/70">· max {max}</span>
+          </div>
           <div className="inline-flex items-center mr-panel-soft">
             <button
               type="button"
-              onClick={() => setCount((c) => Math.max(1, c - 1))}
-              disabled={clamped <= 1}
+              onClick={() => setDraftCount((c) => Math.max(1, c - 1))}
+              disabled={clampedCount <= 1}
               aria-label="Decrease"
               className="w-10 h-10 grid place-items-center text-mr-text hover:text-mr-cyan disabled:opacity-40"
             >
               <Minus className="w-4 h-4" />
             </button>
-            <span className="px-4 font-mono text-lg tabular-nums min-w-[3rem] text-center text-mr-cyan">{clamped}</span>
+            <span className="px-4 font-mono text-lg tabular-nums min-w-[3rem] text-center text-mr-cyan">{clampedCount}</span>
             <button
               type="button"
-              onClick={() => setCount((c) => Math.min(max, c + 1))}
-              disabled={clamped >= max}
+              onClick={() => setDraftCount((c) => Math.min(max, c + 1))}
+              disabled={clampedCount >= max}
               aria-label="Increase"
               className="w-10 h-10 grid place-items-center text-mr-text hover:text-mr-cyan disabled:opacity-40"
             >
@@ -110,25 +133,36 @@ export function EditAllocationModal({ allocation, contract, allAllocations, onCl
         </div>
 
         <div className="mb-5">
-          <div className="mr-label mb-2">Assigned to</div>
+          <div className="mr-label mb-2">Assigned to · tap to reassign</div>
           <div className="grid grid-cols-5 gap-1.5">
             {FACTIONS.map((f) => {
-              const active = allocation.playerId === f.id;
+              const active = draftPlayerId === f.id;
+              const wasActive = allocation.playerId === f.id && !active;
               return (
                 <button
                   key={f.id}
                   type="button"
-                  onClick={() => dispatch({ type: "UPDATE_ALLOCATION", allocationId: allocation.id, patch: { playerId: f.id } })}
-                  className="mr-panel-soft p-2 flex flex-col items-center gap-1 transition-all"
+                  onClick={() => setDraftPlayerId(f.id)}
+                  className="mr-panel-soft p-2 flex flex-col items-center gap-1 transition-all relative"
                   style={{
-                    borderColor: active ? f.colorHex : `color-mix(in oklab, ${f.colorHex} 25%, transparent)`,
-                    boxShadow: active ? `0 0 0 1px ${f.colorHex}` : undefined,
+                    borderColor: active
+                      ? f.colorHex
+                      : `color-mix(in oklab, ${f.colorHex} 25%, transparent)`,
+                    boxShadow: active
+                      ? `0 0 0 2px ${f.colorHex}, 0 0 16px -2px ${f.colorHex}`
+                      : undefined,
+                    opacity: active || !draftPlayerId ? 1 : 0.85,
                   }}
                   aria-pressed={active}
-                  title={`Move to ${f.name}`}
+                  title={`Assign to ${f.name}`}
                 >
-                  <span className="w-4 h-4 rounded-full" style={{ background: f.colorHex }} />
+                  <span className="w-5 h-5 rounded-full" style={{ background: f.colorHex }} />
                   <span className="mr-label text-[9px]">{f.name.slice(0, 4).toUpperCase()}</span>
+                  {wasActive && (
+                    <span className="absolute -top-1 -right-1 text-[8px] font-mono px-1 rounded bg-mr-bg-deep text-mr-text-muted border border-mr-border/30">
+                      was
+                    </span>
+                  )}
                 </button>
               );
             })}
@@ -154,10 +188,8 @@ export function EditAllocationModal({ allocation, contract, allAllocations, onCl
             </button>
             <button
               type="button"
-              onClick={() => {
-                dispatch({ type: "UPDATE_ALLOCATION", allocationId: allocation.id, patch: { count: clamped } });
-                onClose();
-              }}
+              onClick={apply}
+              disabled={!dirty}
               className="px-4 py-2 mr-button text-xs"
               style={{ borderColor: "var(--color-mr-cyan)" }}
             >
@@ -169,6 +201,3 @@ export function EditAllocationModal({ allocation, contract, allAllocations, onCl
     </div>
   );
 }
-
-// Tiny helper so PlayerBox doesn't need to know about player ID typing in the modal.
-export type EditingAllocation = { allocation: Allocation; ownerId: FactionId };

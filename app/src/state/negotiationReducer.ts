@@ -103,12 +103,35 @@ export function negotiationReducer(
     }
 
     case "UPDATE_ALLOCATION":
-      return mapActiveTab(state, (t) => ({
-        ...t,
-        allocations: t.allocations
-          .map((a) => (a.id === action.allocationId ? { ...a, ...action.patch } : a))
-          .filter((a) => a.count > 0),
-      }));
+      return mapActiveTab(state, (t) => {
+        const current = t.allocations.find((a) => a.id === action.allocationId);
+        if (!current) return t;
+        const next: Allocation = { ...current, ...action.patch };
+        // If the change moves this allocation onto an existing chip
+        // (same player/kind/resourceType), merge into that chip and drop this one.
+        const sibling = t.allocations.find(
+          (a) =>
+            a.id !== current.id &&
+            a.playerId === next.playerId &&
+            a.kind === next.kind &&
+            a.resourceType === next.resourceType
+        );
+        if (sibling) {
+          return {
+            ...t,
+            allocations: t.allocations
+              .filter((a) => a.id !== current.id)
+              .map((a) => (a.id === sibling.id ? { ...a, count: a.count + next.count } : a))
+              .filter((a) => a.count > 0),
+          };
+        }
+        return {
+          ...t,
+          allocations: t.allocations
+            .map((a) => (a.id === current.id ? next : a))
+            .filter((a) => a.count > 0),
+        };
+      });
 
     case "REMOVE_ALLOCATION":
       return mapActiveTab(state, (t) => ({
